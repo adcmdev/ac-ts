@@ -2,7 +2,7 @@ import fs from 'fs'
 import {tsconfig} from '../tools/tsconfig';
 import {packageConfig} from '../tools/package';
 import {indexData} from '../tools/index';
-import { indexControllerData } from '../tools/src/user_controller';
+import { userControllerData } from '../tools/src/user_controller';
 import { indexRoutesData } from '../tools/src/user_routes';
 import { userModelData } from '../tools/src/user_model';
 import { appData } from '../tools/app';
@@ -29,7 +29,7 @@ class InitController {
 
         fs.mkdir('./src/controllers/', { recursive: true }, (err) => {
             if (err) throw err;
-            this.createFile('./src/controllers/user_controller.ts', indexControllerData);
+            this.createFile('./src/controllers/user_controller.ts', userControllerData);
         });
 
         fs.mkdir('./src/routes/', { recursive: true }, (err) => {

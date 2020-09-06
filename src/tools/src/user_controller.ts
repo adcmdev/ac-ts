@@ -1,1 +1,1 @@
-export const indexControllerData:string = "import {Request, Response} from 'express';\n\nclass AuthController {\n\n    public method = async(req:Request, res:Response):Promise<void> => {\n        res.send('Hello world');\n    };\n\n}\n\nexport const authController = new AuthController;";
+export const userControllerData:string = "import {Request, Response} from 'express';\n\nclass UserController {\n\n    public method = async(req:Request, res:Response):Promise<void> => {\n        res.send('Hello world');\n    };\n\n}\n\nexport const userController = new UserController;";

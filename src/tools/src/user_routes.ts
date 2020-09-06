@@ -1,1 +1,1 @@
-export const indexRoutesData:string = "import {Router} from 'express';\nimport {authController} from '../controllers/index_controller';\n\nconst router:Router = Router();\n\nrouter.get('/', authController.method);\n\nexport default router;";
+export const userRoutesData:string = "import {Router} from 'express';\nimport {userController} from '../controllers/user_controller';\n\nconst router:Router = Router();\n\nrouter.get('/', userController.method);\n\nexport default router;";
