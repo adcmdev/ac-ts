@@ -2,9 +2,9 @@ import fs from 'fs'
 import {tsconfig} from '../tools/tsconfig';
 import {packageConfig} from '../tools/package';
 import {indexData} from '../tools/index';
-import { indexControllerData } from '../tools/user_controller';
-import { indexRoutesData } from '../tools/user_routes';
-import { userModelData } from '../tools/user_model';
+import { indexControllerData } from '../tools/src/user_controller';
+import { indexRoutesData } from '../tools/src/user_routes';
+import { userModelData } from '../tools/src/user_model';
 import { appData } from '../tools/app';
 import { databaseData } from '../tools/database';
 

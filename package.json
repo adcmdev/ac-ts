@@ -1,7 +1,7 @@
 {
   "name": "acts",
   "version": "1.0.0",
-  "description": "",
+  "description": "This app generate all basic code to start a project with node js and typscript",
   "main": "index.js",
   "scripts": {
     "dev": "concurrently \"tsc -w\" \"nodemon dist/index.js init -n myapp\"",
