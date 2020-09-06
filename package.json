@@ -1,0 +1,25 @@
+{
+  "name": "acts",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "concurrently \"tsc -w\" \"nodemon dist/index.js init -n myapp\"",
+    "start": "node dist/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/node": "^14.6.4",
+    "colors": "^1.4.0",
+    "yargs": "^15.4.1"
+  },
+  "devDependencies": {
+    "@types/colors": "^1.2.1",
+    "@types/yargs": "^15.0.5",
+    "concurrently": "^5.3.0",
+    "nodemon": "^2.0.4",
+    "typescript": "^4.0.2"
+  }
+}

@@ -1,0 +1,1 @@
+export const indexData:string = "import dotenv from 'dotenv'; \ndotenv.config();\n\nimport app from './app';\nimport './database'; \n\nconst main = ():void => {\n    app.listen(app.get('port'));\n    console.log(`Server on port ${app.get('port')}`);\n} \n\nmain();";
