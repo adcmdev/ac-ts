@@ -7,9 +7,10 @@ import { userRoutesData } from '../tools/src/user_routes';
 import { userModelData } from '../tools/src/user_model';
 import { appData } from '../tools/app';
 import { databaseData } from '../tools/database';
+import { exec } from 'child_process';
 
-const path:string = `data/`;
 // const path:string = `data/`;
+const path:string = ``;
 
 class InitController {
 
@@ -45,7 +46,13 @@ class InitController {
             this.createFile(`./${path}src/models/user_model.ts`, userModelData);
         });
 
-        console.log(`${name} Inicializated`);
+        console.log('Downloading packages...');
+
+        exec('npm i', (error, stdout, stderr) => {
+            console.log(stdout);
+            console.log(stderr);
+            console.log(`${name} Inicializated`);
+        });
     }
     
     private createFile = (path:string, data:string):void => {
