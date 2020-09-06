@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
 
-mongoose.connect('mongodb://localhost/test', {
+mongoose.connect(process.env.TOKEN_SECRET, {
     useUnifiedTopology: true,
     useNewUrlParser: true,
     useCreateIndex: true

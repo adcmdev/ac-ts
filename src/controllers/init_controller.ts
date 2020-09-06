@@ -18,6 +18,8 @@ class InitController {
 
         console.log(`Initializing ${name}`);
 
+        this.createFile(`./${path}.env`, 'TOKEN_KEY=\'Your_token_key_here\'\nMONGO_URI=\'mongodb://localhost/test\'\n');
+
         this.createFile(`./${path}tsconfig.json`, JSON.stringify(tsconfig, null, 4));
         
         packageConfig.name = name;

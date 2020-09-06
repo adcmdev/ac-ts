@@ -23,12 +23,13 @@ const user_model_1 = require("../tools/src/user_model");
 const app_1 = require("../tools/app");
 const database_1 = require("../tools/database");
 const child_process_1 = require("child_process");
-// const path:string = `data/`;
-const path = ``;
+const path = `data/`;
+// const path:string = ``;
 class InitController {
     constructor() {
         this.init = (name) => __awaiter(this, void 0, void 0, function* () {
             console.log(`Initializing ${name}`);
+            this.createFile(`./${path}.env`, 'TOKEN_KEY=\'Your_token_key_here\'\nMONGO_URI=\'mongodb://localhost/test\'\n');
             this.createFile(`./${path}tsconfig.json`, JSON.stringify(tsconfig_1.tsconfig, null, 4));
             package_1.packageConfig.name = name;
             this.createFile(`./${path}package.json`, JSON.stringify(package_1.packageConfig, null, 4));
