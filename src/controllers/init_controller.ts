@@ -14,32 +14,32 @@ class InitController {
 
         console.log(`Initializing ${name}`);
 
-        this.createFile('./data/tsconfig.json', JSON.stringify(tsconfig, null, 4));
+        this.createFile('./tsconfig.json', JSON.stringify(tsconfig, null, 4));
         
         packageConfig.name = name;
         
-        this.createFile('./data/package.json', JSON.stringify(packageConfig, null, 4));
+        this.createFile('./package.json', JSON.stringify(packageConfig, null, 4));
 
-        fs.mkdir('./data/src/', { recursive: true }, (err) => {
+        fs.mkdir('./src/', { recursive: true }, (err) => {
             if (err) throw err;
-            this.createFile('./data/src/index.ts', indexData);
-            this.createFile('./data/src/app.ts', appData);
-            this.createFile('./data/src/database.ts', databaseData);
+            this.createFile('./src/index.ts', indexData);
+            this.createFile('./src/app.ts', appData);
+            this.createFile('./src/database.ts', databaseData);
         });
 
-        fs.mkdir('./data/src/controllers/', { recursive: true }, (err) => {
+        fs.mkdir('./src/controllers/', { recursive: true }, (err) => {
             if (err) throw err;
-            this.createFile('./data/src/controllers/user_controller.ts', indexControllerData);
+            this.createFile('./src/controllers/user_controller.ts', indexControllerData);
         });
 
-        fs.mkdir('./data/src/routes/', { recursive: true }, (err) => {
+        fs.mkdir('./src/routes/', { recursive: true }, (err) => {
             if (err) throw err;
-            this.createFile('./data/src/routes/user_routes.ts', indexRoutesData);
+            this.createFile('./src/routes/user_routes.ts', indexRoutesData);
         });
 
-        fs.mkdir('./data/src/models/', { recursive: true }, (err) => {
+        fs.mkdir('./src/models/', { recursive: true }, (err) => {
             if (err) throw err;
-            this.createFile('./data/src/models/user_model.ts', userModelData);
+            this.createFile('./src/models/user_model.ts', userModelData);
         });
 
         console.log(`${name} Inicializated`);

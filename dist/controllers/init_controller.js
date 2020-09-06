@@ -17,39 +17,39 @@ const fs_1 = __importDefault(require("fs"));
 const tsconfig_1 = require("../tools/tsconfig");
 const package_1 = require("../tools/package");
 const index_1 = require("../tools/index");
-const user_controller_1 = require("../tools/user_controller");
-const user_routes_1 = require("../tools/user_routes");
-const user_model_1 = require("../tools/user_model");
+const user_controller_1 = require("../tools/src/user_controller");
+const user_routes_1 = require("../tools/src/user_routes");
+const user_model_1 = require("../tools/src/user_model");
 const app_1 = require("../tools/app");
 const database_1 = require("../tools/database");
 class InitController {
     constructor() {
         this.init = (name) => __awaiter(this, void 0, void 0, function* () {
             console.log(`Initializing ${name}`);
-            this.createFile('./data/tsconfig.json', JSON.stringify(tsconfig_1.tsconfig, null, 4));
+            this.createFile('./tsconfig.json', JSON.stringify(tsconfig_1.tsconfig, null, 4));
             package_1.packageConfig.name = name;
-            this.createFile('./data/package.json', JSON.stringify(package_1.packageConfig, null, 4));
-            fs_1.default.mkdir('./data/src/', { recursive: true }, (err) => {
+            this.createFile('./package.json', JSON.stringify(package_1.packageConfig, null, 4));
+            fs_1.default.mkdir('./src/', { recursive: true }, (err) => {
                 if (err)
                     throw err;
-                this.createFile('./data/src/index.ts', index_1.indexData);
-                this.createFile('./data/src/app.ts', app_1.appData);
-                this.createFile('./data/src/database.ts', database_1.databaseData);
+                this.createFile('./src/index.ts', index_1.indexData);
+                this.createFile('./src/app.ts', app_1.appData);
+                this.createFile('./src/database.ts', database_1.databaseData);
             });
-            fs_1.default.mkdir('./data/src/controllers/', { recursive: true }, (err) => {
+            fs_1.default.mkdir('./src/controllers/', { recursive: true }, (err) => {
                 if (err)
                     throw err;
-                this.createFile('./data/src/controllers/user_controller.ts', user_controller_1.indexControllerData);
+                this.createFile('./src/controllers/user_controller.ts', user_controller_1.indexControllerData);
             });
-            fs_1.default.mkdir('./data/src/routes/', { recursive: true }, (err) => {
+            fs_1.default.mkdir('./src/routes/', { recursive: true }, (err) => {
                 if (err)
                     throw err;
-                this.createFile('./data/src/routes/user_routes.ts', user_routes_1.indexRoutesData);
+                this.createFile('./src/routes/user_routes.ts', user_routes_1.indexRoutesData);
             });
-            fs_1.default.mkdir('./data/src/models/', { recursive: true }, (err) => {
+            fs_1.default.mkdir('./src/models/', { recursive: true }, (err) => {
                 if (err)
                     throw err;
-                this.createFile('./data/src/models/user_model.ts', user_model_1.userModelData);
+                this.createFile('./src/models/user_model.ts', user_model_1.userModelData);
             });
             console.log(`${name} Inicializated`);
         });

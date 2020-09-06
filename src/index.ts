@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 import yargs from './config';
 import {initController} from './controllers/init_controller';
 

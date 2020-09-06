@@ -2,7 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.packageConfig = void 0;
 const packageConfig = {
-    "name": "nodets",
+    "name": "project",
     "version": "1.0.0",
     "description": "",
     "main": "index.js",
