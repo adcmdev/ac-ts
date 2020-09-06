@@ -23,8 +23,8 @@ const user_model_1 = require("../tools/src/user_model");
 const app_1 = require("../tools/app");
 const database_1 = require("../tools/database");
 const child_process_1 = require("child_process");
-const path = `data/`;
 // const path:string = `data/`;
+const path = ``;
 class InitController {
     constructor() {
         this.init = (name) => __awaiter(this, void 0, void 0, function* () {
