@@ -14,8 +14,8 @@ import { socketRoutesData } from '../tools/src/socket_routes';
 import { socketModelData } from '../tools/src/socket_model';
 import { socketControllerData } from '../tools/src/socket_controller';
 
-const path:string = `data/`;
-// const path:string = ``;
+// const path:string = `data/`;
+const path:string = ``;
 
 class InitController {
 
