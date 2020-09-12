@@ -2,7 +2,7 @@ import yargs from 'yargs';
 
 yargs.command('init', 'Init a node project with ts config', {
     name: {
-        alias: 'n',
+        alias: 'i',
         desc: 'Set project name',
         default: 'project'
     }

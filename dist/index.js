@@ -17,10 +17,16 @@ const config_1 = __importDefault(require("./config"));
 const init_controller_1 = require("./controllers/init_controller");
 const main = () => __awaiter(void 0, void 0, void 0, function* () {
     const command = config_1.default.argv._[0];
-    const name = config_1.default.argv.n + '' || 'project';
+    const ws = config_1.default.argv._[1];
+    console.log(config_1.default.argv);
+    console.log(config_1.default.argv._[1]);
+    const name = config_1.default.argv.n + '' || config_1.default.argv.name + '' || 'project';
     switch (command) {
         case 'init':
-            init_controller_1.initController.init(name);
+            if (ws)
+                init_controller_1.initController.init(name, true);
+            else
+                init_controller_1.initController.init(name, false);
             break;
         default:
             console.log('Command not found.');
