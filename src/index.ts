@@ -7,9 +7,6 @@ const main = async () => {
     const command:string = yargs.argv._[0];
     const ws:string = yargs.argv._[1];
 
-    console.log(yargs.argv);
-    console.log(yargs.argv._[1]);
-
     const name:string = yargs.argv.n + '' || yargs.argv.name + '' || 'project';
 
     switch (command) {
