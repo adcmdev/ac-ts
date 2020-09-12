@@ -50,7 +50,7 @@ class InitController {
         fs.mkdir(`./${path}src/models/`, { recursive: true }, (err) => {
             if (err) throw err;
             this.createFile(`./${path}src/models/user_model.ts`, userModelData);
-            if(ws) this.createFile(`./${path}src/routes/socket_model.ts`, socketModelData);
+            if(ws) this.createFile(`./${path}src/models/socket_model.ts`, socketModelData);
         });
 
         if(ws) {

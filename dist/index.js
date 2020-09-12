@@ -18,8 +18,6 @@ const init_controller_1 = require("./controllers/init_controller");
 const main = () => __awaiter(void 0, void 0, void 0, function* () {
     const command = config_1.default.argv._[0];
     const ws = config_1.default.argv._[1];
-    console.log(config_1.default.argv);
-    console.log(config_1.default.argv._[1]);
     const name = config_1.default.argv.n + '' || config_1.default.argv.name + '' || 'project';
     switch (command) {
         case 'init':
