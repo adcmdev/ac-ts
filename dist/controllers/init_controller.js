@@ -84,7 +84,12 @@ class InitController {
                     console.log(error);
                 console.log(stdout);
                 console.log(stderr);
-                console.log(`${name} Inicializated`);
+                console.log('Compiling typescript...');
+                child_process_1.exec('tsc', (error) => {
+                    if (error)
+                        console.log(error);
+                    console.log(`${name} Inicializated`);
+                });
             });
         });
         this.createFile = (path, data) => {

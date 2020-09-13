@@ -70,7 +70,11 @@ class InitController {
             if(error) console.log(error);
             console.log(stdout);
             console.log(stderr);
-            console.log(`${name} Inicializated`);
+            console.log('Compiling typescript...');
+            exec('tsc', (error) => {
+                if(error) console.log(error);
+                console.log(`${name} Inicializated`);
+            });
         });
     }
     
