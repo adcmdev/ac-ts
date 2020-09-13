@@ -10,7 +10,7 @@ exports.htmlViewData = "<!DOCTYPE html>\n" +
     "    <title>WebSockets</title>\n" +
     "</head>\n\n" +
     "<body>\n" +
-    "    <script src=\"/dist/public/logic/socket.js\"></script>\n" +
+    "    <script src=\"./logic/socket.js\"></script>\n" +
     "</body>\n\n" +
     "</html>\n";
 //# sourceMappingURL=index-html.js.map

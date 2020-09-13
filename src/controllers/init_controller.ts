@@ -54,13 +54,13 @@ class InitController {
         });
 
         if(ws) {
-            fs.mkdir(`./${path}src/public/`, { recursive: true }, (err) => {
+            fs.mkdir(`./${path}public/`, { recursive: true }, (err) => {
                 if (err) throw err;
-                this.createFile(`./${path}src/public/index.html`, htmlViewData);
+                this.createFile(`./${path}public/index.html`, htmlViewData);
             }); 
-            fs.mkdir(`./${path}src/public/logic/`, { recursive: true }, (err) => {
+            fs.mkdir(`./${path}public/logic/`, { recursive: true }, (err) => {
                 if (err) throw err;
-                this.createFile(`./${path}src/public/logic/socket.ts`, logicWsData);
+                this.createFile(`./${path}public/logic/socket.js`, logicWsData);
             }); 
         }
 

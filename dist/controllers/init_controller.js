@@ -67,15 +67,15 @@ class InitController {
                     this.createFile(`./${path}src/models/socket_model.ts`, socket_model_1.socketModelData);
             });
             if (ws) {
-                fs_1.default.mkdir(`./${path}src/public/`, { recursive: true }, (err) => {
+                fs_1.default.mkdir(`./${path}public/`, { recursive: true }, (err) => {
                     if (err)
                         throw err;
-                    this.createFile(`./${path}src/public/index.html`, index_html_1.htmlViewData);
+                    this.createFile(`./${path}public/index.html`, index_html_1.htmlViewData);
                 });
-                fs_1.default.mkdir(`./${path}src/public/logic/`, { recursive: true }, (err) => {
+                fs_1.default.mkdir(`./${path}public/logic/`, { recursive: true }, (err) => {
                     if (err)
                         throw err;
-                    this.createFile(`./${path}src/public/logic/socket.ts`, socket_chat_1.logicWsData);
+                    this.createFile(`./${path}public/logic/socket.js`, socket_chat_1.logicWsData);
                 });
             }
             console.log('Downloading packages...');
