@@ -14,7 +14,7 @@ export const socketRoutesData:string =
 
 "    const pathname:string = url.parse(request.url).pathname + '';\n\n" +
 
-"    if(pathname === '/connection/') {\n\n" +
+"    if(pathname === '/connection') {\n\n" +
         
 "        wsServer.handleUpgrade(request, socket, head, socket => {\n" +
 "            wsServer.emit('connection', socket, request);\n" +
