@@ -31,6 +31,7 @@ export const packageConfig = (name:string , ws:boolean) => {
             "dotenv": "*",
             "jsonwebtoken": "*",
             "bcryptjs": "*",
+            "typescript": "*"
         },
         "devDependencies": {
             "@types/express": "*",
@@ -39,8 +40,7 @@ export const packageConfig = (name:string , ws:boolean) => {
             "@types/jsonwebtoken": "*",
             "@types/bcryptjs": "*",
             "concurrently": "*",
-            "nodemon": "*",
-            "typescript": "*"
+            "nodemon": "*"
         }
     };
 

@@ -20,6 +20,7 @@ exports.packageConfig = (name, ws) => {
             "dotenv": "*",
             "jsonwebtoken": "*",
             "bcryptjs": "*",
+            "typescript": "*"
         },
         "devDependencies": {
             "@types/express": "*",
@@ -28,8 +29,7 @@ exports.packageConfig = (name, ws) => {
             "@types/jsonwebtoken": "*",
             "@types/bcryptjs": "*",
             "concurrently": "*",
-            "nodemon": "*",
-            "typescript": "*"
+            "nodemon": "*"
         }
     };
     if (ws) {
