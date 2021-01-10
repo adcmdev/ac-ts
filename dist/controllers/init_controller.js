@@ -27,8 +27,8 @@ const socket_chat_1 = require("../tools/public/logic/socket-chat");
 const socket_routes_1 = require("../tools/src/modules/socket_routes");
 const socket_model_1 = require("../tools/src/modules/socket_model");
 const socket_controller_1 = require("../tools/src/modules/socket_controller");
-const path = `data/`;
-// const path: string = ``;
+// const path: string = `data/`;
+const path = ``;
 class InitController {
     constructor() {
         this.init = (name, ws) => __awaiter(this, void 0, void 0, function* () {
