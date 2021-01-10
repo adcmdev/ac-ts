@@ -1,6 +1,5 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.socketModelData = void 0;
 exports.socketModelData = "import ws from 'ws';\n\n" +
     "export interface ISocketUser {\n" +
     "    client: ws\n" +

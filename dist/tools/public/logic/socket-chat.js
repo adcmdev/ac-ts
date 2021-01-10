@@ -1,6 +1,5 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.logicWsData = void 0;
 exports.logicWsData = "const ws = new WebSocket('ws://localhost:3000/connection');\n\n" +
     "ws.onopen = (e) => {\n" +
     "    console.log('connected');\n" +

@@ -1,6 +1,5 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.packageConfig = void 0;
 exports.packageConfig = (name, ws) => {
     let data = {
         "name": name,

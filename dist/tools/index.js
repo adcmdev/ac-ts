@@ -1,6 +1,5 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.indexData = void 0;
 exports.indexData = (ws) => {
     let socketRoutes = (ws) ? "    require('./routes/socket_routes');\n" : "";
     let appImporter = (ws) ? "import app, {server} from './app';\n" : "import app from './app';\n";

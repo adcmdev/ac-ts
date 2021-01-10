@@ -12,7 +12,6 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.initController = void 0;
 const fs_1 = __importDefault(require("fs"));
 const tsconfig_1 = require("../tools/tsconfig");
 const package_1 = require("../tools/package");
@@ -25,11 +24,11 @@ const database_1 = require("../tools/database");
 const child_process_1 = require("child_process");
 const index_html_1 = require("../tools/public/index-html");
 const socket_chat_1 = require("../tools/public/logic/socket-chat");
-const socket_routes_1 = require("../tools/src/socket_routes");
-const socket_model_1 = require("../tools/src/socket_model");
-const socket_controller_1 = require("../tools/src/socket_controller");
-// const path:string = `data/`;
-const path = ``;
+const socket_routes_1 = require("../tools/src/modules/socket_routes");
+const socket_model_1 = require("../tools/src/modules/socket_model");
+const socket_controller_1 = require("../tools/src/modules/socket_controller");
+const path = `data/`;
+// const path: string = ``;
 class InitController {
     constructor() {
         this.init = (name, ws) => __awaiter(this, void 0, void 0, function* () {
@@ -43,30 +42,32 @@ class InitController {
                     throw err;
                 this.createFile(`./${path}src/index.ts`, index_1.indexData(ws));
                 this.createFile(`./${path}src/app.ts`, app_1.appData(ws));
+            });
+            fs_1.default.mkdir(`./${path}src/database/`, { recursive: true }, (err) => {
+                if (err)
+                    throw err;
                 this.createFile(`./${path}src/database.ts`, database_1.databaseData);
             });
-            fs_1.default.mkdir(`./${path}src/controllers/`, { recursive: true }, (err) => {
+            fs_1.default.mkdir(`./${path}src/middlewares/`, { recursive: true }, (err) => {
                 if (err)
                     throw err;
-                this.createFile(`./${path}src/controllers/user_controller.ts`, user_controller_1.userControllerData);
-                if (ws)
-                    this.createFile(`./${path}src/controllers/socket_controller.ts`, socket_controller_1.socketControllerData);
+                this.createFile(`./${path}src/auth.ts`, database_1.databaseData);
             });
-            fs_1.default.mkdir(`./${path}src/routes/`, { recursive: true }, (err) => {
+            fs_1.default.mkdir(`./${path}src/modules/user/`, { recursive: true }, (err) => {
                 if (err)
                     throw err;
-                this.createFile(`./${path}src/routes/user_routes.ts`, user_routes_1.userRoutesData);
-                if (ws)
-                    this.createFile(`./${path}src/routes/socket_routes.ts`, socket_routes_1.socketRoutesData);
-            });
-            fs_1.default.mkdir(`./${path}src/models/`, { recursive: true }, (err) => {
-                if (err)
-                    throw err;
-                this.createFile(`./${path}src/models/user_model.ts`, user_model_1.userModelData);
-                if (ws)
-                    this.createFile(`./${path}src/models/socket_model.ts`, socket_model_1.socketModelData);
+                this.createFile(`./${path}src/modules/user/user_controller.ts`, user_controller_1.userControllerData);
+                this.createFile(`./${path}src/modules/user/user_routes.ts`, user_routes_1.userRoutesData);
+                this.createFile(`./${path}src/modules/user/user_model.ts`, user_model_1.userModelData);
             });
             if (ws) {
+                fs_1.default.mkdir(`./${path}src/modules/socket/`, { recursive: true }, (err) => {
+                    if (err)
+                        throw err;
+                    this.createFile(`./${path}src/modules/socket/socket_controller.ts`, socket_controller_1.socketControllerData);
+                    this.createFile(`./${path}src/modules/socket/socket_routes.ts`, socket_routes_1.socketRoutesData);
+                    this.createFile(`./${path}src/modules/socket/socket_model.ts`, socket_model_1.socketModelData);
+                });
                 fs_1.default.mkdir(`./${path}public/`, { recursive: true }, (err) => {
                     if (err)
                         throw err;
@@ -84,18 +85,18 @@ class InitController {
                     console.log(error);
                 console.log(stdout);
                 console.log(stderr);
-                console.log('Compiling typescript...');
-                child_process_1.exec('tsc', (error) => {
-                    if (error)
-                        console.log(error);
-                    console.log(`${name} Inicializated`);
-                });
+                console.log(`${name} Inicializated`);
+                // console.log('Compiling typescript...');
+                // exec('tsc', (error) => {
+                //     if(error) console.log(error);
+                //     console.log(`${name} Inicializated`);
+                // });
             });
         });
         this.createFile = (path, data) => {
             fs_1.default.writeFile(path, data, (err) => {
                 if (err)
-                    throw new Error(`Can\`t create tsconfig file`);
+                    throw err;
             });
         };
     }

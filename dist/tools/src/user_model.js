@@ -1,6 +1,5 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.userModelData = void 0;
 exports.userModelData = "import {Schema, model, Document} from 'mongoose';\n" +
     "import bcrypt from 'bcryptjs';\n\n" +
     "export interface IUser extends Document {\n" +

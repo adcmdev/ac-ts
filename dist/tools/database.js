@@ -1,6 +1,5 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.databaseData = void 0;
 exports.databaseData = "import mongoose from 'mongoose';" +
     "\n\n" +
     "mongoose.connect(process.env.MONGO_URI + '', {\n" +

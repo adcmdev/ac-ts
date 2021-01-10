@@ -1,6 +1,5 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.appData = void 0;
 exports.appData = (ws) => {
     const http = (ws) ? "import http from 'http';\n" : "";
     const path = (ws) ? "import path from 'path';\n\n" : "\n";

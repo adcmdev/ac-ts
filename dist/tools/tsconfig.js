@@ -1,6 +1,5 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.tsconfig = void 0;
 const tsconfig = {
     "compilerOptions": {
         /* Visit https://aka.ms/tsconfig.json to read more about this file */

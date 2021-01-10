@@ -10,12 +10,12 @@ import { databaseData } from '../tools/database';
 import { exec } from 'child_process';
 import { htmlViewData } from '../tools/public/index-html';
 import { logicWsData } from '../tools/public/logic/socket-chat';
-import { socketRoutesData } from '../tools/src/socket_routes';
-import { socketModelData } from '../tools/src/socket_model';
-import { socketControllerData } from '../tools/src/socket_controller';
+import { socketRoutesData } from '../tools/src/modules/socket_routes';
+import { socketModelData } from '../tools/src/modules/socket_model';
+import { socketControllerData } from '../tools/src/modules/socket_controller';
 
-// const path:string = `data/`;
-const path:string = ``;
+// const path: string = `data/`;
+const path: string = ``;
 
 class InitController {
 
@@ -32,28 +32,34 @@ class InitController {
             if (err) throw err;
             this.createFile(`./${path}src/index.ts`, indexData(ws));
             this.createFile(`./${path}src/app.ts`, appData(ws));
+        });
+
+        fs.mkdir(`./${path}src/database/`, { recursive: true }, (err) => {
+            if (err) throw err;
             this.createFile(`./${path}src/database.ts`, databaseData);
         });
 
-        fs.mkdir(`./${path}src/controllers/`, { recursive: true }, (err) => {
+        fs.mkdir(`./${path}src/middlewares/`, { recursive: true }, (err) => {
             if (err) throw err;
-            this.createFile(`./${path}src/controllers/user_controller.ts`, userControllerData);
-            if(ws) this.createFile(`./${path}src/controllers/socket_controller.ts`, socketControllerData);
+            this.createFile(`./${path}src/auth.ts`, databaseData);
         });
 
-        fs.mkdir(`./${path}src/routes/`, { recursive: true }, (err) => {
+        fs.mkdir(`./${path}src/modules/user/`, { recursive: true }, (err) => {
             if (err) throw err;
-            this.createFile(`./${path}src/routes/user_routes.ts`, userRoutesData);
-            if(ws) this.createFile(`./${path}src/routes/socket_routes.ts`, socketRoutesData);
-        });
-
-        fs.mkdir(`./${path}src/models/`, { recursive: true }, (err) => {
-            if (err) throw err;
-            this.createFile(`./${path}src/models/user_model.ts`, userModelData);
-            if(ws) this.createFile(`./${path}src/models/socket_model.ts`, socketModelData);
+            this.createFile(`./${path}src/modules/user/user_controller.ts`, userControllerData);
+            this.createFile(`./${path}src/modules/user/user_routes.ts`, userRoutesData);
+            this.createFile(`./${path}src/modules/user/user_model.ts`, userModelData);
         });
 
         if(ws) {
+
+            fs.mkdir(`./${path}src/modules/socket/`, { recursive: true }, (err) => {
+                if (err) throw err;
+                this.createFile(`./${path}src/modules/socket/socket_controller.ts`, socketControllerData);
+                this.createFile(`./${path}src/modules/socket/socket_routes.ts`, socketRoutesData);
+                this.createFile(`./${path}src/modules/socket/socket_model.ts`, socketModelData);
+            });
+
             fs.mkdir(`./${path}public/`, { recursive: true }, (err) => {
                 if (err) throw err;
                 this.createFile(`./${path}public/index.html`, htmlViewData);
@@ -70,17 +76,18 @@ class InitController {
             if(error) console.log(error);
             console.log(stdout);
             console.log(stderr);
-            console.log('Compiling typescript...');
-            exec('tsc', (error) => {
-                if(error) console.log(error);
-                console.log(`${name} Inicializated`);
-            });
+            console.log(`${name} Inicializated`);
+            // console.log('Compiling typescript...');
+            // exec('tsc', (error) => {
+            //     if(error) console.log(error);
+            //     console.log(`${name} Inicializated`);
+            // });
         });
     }
     
     private createFile = (path:string, data:string):void => {
         fs.writeFile(path, data, (err) => {
-            if(err) throw new Error(`Can\`t create tsconfig file`);
+            if(err) throw err;
         });
     }
 }

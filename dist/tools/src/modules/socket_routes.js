@@ -1,6 +1,5 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.socketRoutesData = void 0;
 exports.socketRoutesData = "import ws from 'ws'\n" +
     "import { server } from '../app';\n" +
     "import { Request } from 'express';\n" +

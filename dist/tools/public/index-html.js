@@ -1,6 +1,5 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.htmlViewData = void 0;
 exports.htmlViewData = "<!DOCTYPE html>\n" +
     "<html lang=\"en\">\n\n" +
     "<head>\n" +

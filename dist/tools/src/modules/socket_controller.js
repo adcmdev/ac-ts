@@ -1,6 +1,5 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.socketControllerData = void 0;
 exports.socketControllerData = "import ws from 'ws';\n" +
     "import { Request } from 'express';\n" +
     "import { ISocketUser, socketUsers } from '../models/socket_model';\n\n" +
