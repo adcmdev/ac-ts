@@ -2,7 +2,7 @@ export const socketControllerData:string =
 
 "import ws from 'ws';\n" +
 "import { Request } from 'express';\n" +
-"import { ISocketUser, socketUsers } from '../models/socket_model';\n\n" +
+"import { ISocketUser, socketUsers } from './socket_model';\n\n" +
 
 "interface IMessage {\n" +
 "    type?: number\n" +

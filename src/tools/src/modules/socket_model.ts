@@ -1,4 +1,4 @@
-export const socketModelData:string = 
+export const socketModelData: string = 
 
 "import ws from 'ws';\n\n" +
 

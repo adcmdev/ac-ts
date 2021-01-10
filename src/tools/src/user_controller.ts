@@ -1,4 +1,4 @@
-export const userControllerData:string =
+export const userControllerData: string =
 
 "import {Request, Response} from 'express';\n\n" +
 

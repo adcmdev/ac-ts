@@ -1,4 +1,4 @@
-export const databaseData:string = 
+export const databaseData: string = 
 
 "import mongoose from 'mongoose';" +
 "\n\n" +

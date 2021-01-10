@@ -1,10 +1,10 @@
-export const socketRoutesData:string = 
+export const socketRoutesData: string = 
 
 "import ws from 'ws'\n" +
-"import { server } from '../app';\n" +
+"import { server } from '../../app';\n" +
 "import { Request } from 'express';\n" +
 "import url from 'url';\n" +
-"import { socketController } from '../controllers/socket_controller';\n\n" +
+"import { socketController } from './socket_controller';\n\n" +
 
 "const wsServer = new ws.Server({ noServer: true });\n\n" +
 

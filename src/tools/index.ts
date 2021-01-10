@@ -1,6 +1,6 @@
 export const indexData = (ws:boolean) => {
 
-    let socketRoutes = (ws) ? "    require('./routes/socket_routes');\n" : "";
+    let socketRoutes = (ws) ? "    require('./modules/socket/socket_routes');\n" : "";
     let appImporter = (ws) ? "import app, {server} from './app';\n" : "import app from './app';\n";
     let server = (ws) ? "    server.listen(app.get('port'));\n" : "    app.listen(app.get('port'));\n";
 

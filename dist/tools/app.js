@@ -7,7 +7,7 @@ exports.appData = (ws) => {
     const publicPath = (ws) ? "const publicPath:string = path.resolve(__dirname, '../public');\n\n" : "";
     const middelware = (ws) ? "app.use('/', express.static(publicPath));\n\n" : "";
     let data = "import express, {Application} from 'express';\n" +
-        "import userRoutes from './routes/user_routes';\n" +
+        "import userRoutes from './modules/user/user_routes';\n" +
         http +
         path +
         "const app:Application = express();\n\n" +

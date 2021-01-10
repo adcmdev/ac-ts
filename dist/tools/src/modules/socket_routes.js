@@ -1,10 +1,10 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.socketRoutesData = "import ws from 'ws'\n" +
-    "import { server } from '../app';\n" +
+    "import { server } from '../../app';\n" +
     "import { Request } from 'express';\n" +
     "import url from 'url';\n" +
-    "import { socketController } from '../controllers/socket_controller';\n\n" +
+    "import { socketController } from './socket_controller';\n\n" +
     "const wsServer = new ws.Server({ noServer: true });\n\n" +
     "wsServer.on('connection', socketController.onConnect);\n\n" +
     "server.on('upgrade', (request:Request, socket, head) => {\n\n" +

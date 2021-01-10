@@ -8,7 +8,7 @@ export const userModelData =
 "    email: string;\n" +
 "    password: string;\n" +
 "    encryptPassword(password:string): Promise<string>;\n" +
-"    validatePassword(password:string): Promise<string>;\n" +
+"    validatePassword(currentPass: string, password: string): Promise<boolean>;\n" +
 "};\n\n" +
 "const userSchema = new Schema({\n" +
 "    firstName: {\n" +
@@ -54,8 +54,8 @@ export const userModelData =
 "    return bcrypt.hashSync(password, salt);\n" +
 "};\n\n" +
 
-"userSchema.methods.validatePassword = async function (password:string):Promise<boolean> {\n" +
-"    return await bcrypt.compare(password, this.password);\n" +
+"userSchema.methods.validatePassword = async function (currentPass: string, password: string):Promise<boolean> {\n" +
+"    return await bcrypt.compare(password, currentPass);\n" +
 "};\n\n" +
 
 "export default model<IUser>('User', userSchema);\n";

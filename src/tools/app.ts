@@ -8,7 +8,7 @@ export const appData = (ws:boolean) => {
 
     let data:string =
     "import express, {Application} from 'express';\n" +
-    "import userRoutes from './routes/user_routes';\n" +
+    "import userRoutes from './modules/user/user_routes';\n" +
     http +
     path +
 
